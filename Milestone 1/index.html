@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone 1 - Boolzap</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #090E11;
+        }
+
+        .container {
+            width: 1400px;
+            height: 900px;
+            margin: auto;
+            margin-top: 60px;
+            background: blue;
+            display: flex;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 35%;
+            height: 100%;
+            background-color: red;
+
+        }
+        .header_side {
+            width: 100%;
+            height: 80px;
+            background: grey;
+        }
+
+        .notification {
+            width: 100%;
+            height: 100px;
+            background-color: lightgray;
+        }
+
+        .search_chat {
+            width: 100%;
+            height: 70px;
+            background-color: yellow;
+        }
+
+        .contact_list {
+            width: 100%;
+            height: 650px;
+            background-color: blue;
+        }
+        /* !SIDEBAR */
+
+        /* CHAT SECTION / MAIN */
+        .main {
+            width: 65%;
+            height: 100%;
+            background-color: green;
+        }
+         .header_main {
+            width: 100%;
+            height: 80px;
+            background: grey;
+        }
+        .chat_preview {
+            width: 100%;
+            height: 700px;
+            background-image: url("assets/img/mine.jpg");
+        }
+        .chat_input {
+            width: 100%;
+            height: 120px;
+            background: lightgreen;
+        }
+        /* !CHAT SECTION / MAIN */
+
+    </style>
+</head>
+<body>
+    
+    <div id="root">
+        
+        <div class="container">
+
+            <!-- SIDEBAR -->
+            <div class="sidebar">
+                <div class="header_side">
+                    Username
+                </div>
+
+                <div class="notification">
+                    disable notification
+                </div>
+
+                <div class="search_chat">
+                    Cerca o inizia una nuova chat
+                </div>
+
+                <div class="contact_list">
+                    Lista contatti
+                </div>
+            </div>
+        <!-- !SIDEBAR -->
+
+
+
+
+
+            <!-- CHAT SECTION / MAIN -->
+            <div class="main">
+                <div class="header_main">
+                    User Chat
+                </div>
+                <div class="chat_preview">
+
+                </div>
+                <div class="chat_input">
+
+                </div>
+            </div>
+            <!-- !CHAT SECTION / MAIN -->
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
