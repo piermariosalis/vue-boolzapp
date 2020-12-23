@@ -25,5 +25,10 @@ let app = new Vue ({
                 avatar: './assets/img/avatar_4.jpg'
             }
         ],
+        mainUser : {
+            name: 'Michele',
+            lastSeen: 'Ultimo accesso alle',
+            avatar: './assets/img/avatar_1.jpg'
+        }
     }
 })
