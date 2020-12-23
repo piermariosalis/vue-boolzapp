@@ -14,17 +14,19 @@
             box-sizing: border-box;
             font-family: 'Quicksand', sans-serif;
         }
-        body {
-            background: #090E11;
-        }
+       
 
         .container {
             width: 1400px;
             height: 900px;
-            margin: auto;
-            margin-top: 60px;
+            
+            margin-top: 0;
             background: blue;
             display: flex;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
         }
 
         /* SIDEBAR */
@@ -93,8 +95,11 @@
 
     </style>
 </head>
-<body>
-    
+<body >
+    <div class="layover_One" style="width: 100vw; height: 100px; position: fixed; z-index: -1; background: #009688; margin: 0;">
+  
+  
+        </div>
     <div id="root">
         
         <div class="container">
@@ -156,7 +161,7 @@
             <div class="main">
                 <div class="header_main">
                     <span style="width:85%; height: 80px; display: inline-block;">
-                        <img :src="mainUser.avatar" style="width:60px; border-radius: 50%;vertical-align: middle;">
+                        <img :src="mainUser.avatar" style="width:60px; border-radius: 50%;vertical-align: middle;margin-left: 15px;">
                         <span style="display: inline-block; vertical-align: middle; line-height: 20px;">
                             <h3>{{ mainUser.name }}</h3>
                             <div>{{ mainUser.lastSeen }}</div>
@@ -191,6 +196,9 @@
 
     </div>
 
+    <div class="layoverTwo" style="width: 100vw; height: 100%; background: #DBDBD3; position: fixed; z-index: -2;">
+
+    </div>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
