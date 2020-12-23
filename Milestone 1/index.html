@@ -102,8 +102,16 @@
             <!-- SIDEBAR -->
             <div class="sidebar">
                 <div class="header_side">
-                    <img :src="userAccount.avatar" style="width:60px; border-radius: 50%;vertical-align: middle; margin-left: 15px;">
-                    <span style="display: inline-block"><h3>{{ userAccount.name }}</h3></span>
+                    <span style="width: 70%; height: 80px; display: inline-block;">
+                        <img :src="userAccount.avatar" style="width:60px; border-radius: 50%;vertical-align: middle; margin-left: 15px;">
+                        <span style="display: inline-block"><h3>{{ userAccount.name }}</h3></span>
+                    </span>
+                    <span style="width: 29%; height: 80px;">
+                        <i class="fas fa-circle-notch" style=" font-size: 25px; vertical-align: middle; color: #B1B1B1"></i>
+                        <i class="fas fa-comment-alt" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1; margin: 0 20px;"></i>
+                        <i class="fas fa-ellipsis-v" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+                    </span>
+                    
                 </div>
 
                 <div class="notification">
@@ -133,7 +141,7 @@
                     <ul style="margin-top: 30px;">
                         <li v-for="contacts in contacts" style="border-bottom: 0.5px solid #F9F9F9; margin-bottom: 20px;">
                             <img :src="contacts.avatar" alt="" style="width:90px; border-radius: 50%;vertical-align: middle; margin-left: 15px; margin-bottom: 15px;">
-                            <span style="vertical-align: middle;">{{ contacts.name }}</span>
+                            <span style="vertical-align: top; margin-left: 20px; font-size: 22px;font-weight: bold;">{{ contacts.name }}</span>
                         </li>
                     </ul>
                 </div>
@@ -147,11 +155,20 @@
             <!-- CHAT SECTION / MAIN -->
             <div class="main">
                 <div class="header_main">
-                    <img :src="mainUser.avatar" style="width:60px; border-radius: 50%;vertical-align: middle;">
-                    <span style="display: inline-block; vertical-align: middle; line-height: 20px;">
-                        <h3>{{ mainUser.name }}</h3>
-                        <div>{{ mainUser.lastSeen }}</div>
+                    <span style="width:85%; height: 80px; display: inline-block;">
+                        <img :src="mainUser.avatar" style="width:60px; border-radius: 50%;vertical-align: middle;">
+                        <span style="display: inline-block; vertical-align: middle; line-height: 20px;">
+                            <h3>{{ mainUser.name }}</h3>
+                            <div>{{ mainUser.lastSeen }}</div>
+                        </span>
                     </span>
+                        <span style="width: 14%; height: 80px; display: inline-block;">
+                            <i class="fas fa-search" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+                            <i class="fas fa-paperclip" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1; margin: 0 20px;"></i>
+                            <i class="fas fa-ellipsis-v" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+                        </span>
+                    
+                   
                 </div>
                 <div class="chat_preview">
 
@@ -161,7 +178,7 @@
                         <i class="far fa-smile" style="font-size: 35px; color: #6B7376; vertical-align: middle; "></i>
                     </div>
                     <div style="width: 79%; height: 120px; line-height: 100px; display: inline-block; ">
-                        <input style="width: 100%; height: 100px; margin-top: 10px; border: 1px solid white; width: 100%;  padding: 10px; font-size: 18px; vertical-align: middle; border-radius: 10px;" type="text" placeholder="Scrivi un messaggio">
+                        <input style="width: 100%; height: 100px; margin-top: 10px; border: 1px solid white; width: 100%;  padding: 10px; font-size:20px; vertical-align: middle; border-radius: 10px;" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div style="width: 10%; height: 100%; display: inline-block; text-align: center;">
                         <i class="fas fa-microphone" style="font-size: 35px; color: #6B7376; vertical-align: middle;"></i>

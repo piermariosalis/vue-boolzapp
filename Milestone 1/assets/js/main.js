@@ -27,7 +27,7 @@ let app = new Vue ({
         ],
         mainUser : {
             name: 'Michele',
-            lastSeen: 'Ultimo accesso alle',
+            lastSeen: 'Ultimo accesso oggi alle',
             avatar: './assets/img/avatar_1.jpg'
         }
     }
