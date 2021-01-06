@@ -217,7 +217,7 @@
                         <img :src="contacts[index].avatar" style="width:60px; border-radius: 50%;vertical-align: middle;margin-left: 15px;">
                         <span style="display: inline-block; vertical-align: middle; line-height: 20px;">
                             <h3>{{ contacts[index].name }}</h3>
-                            <div>{{ mainUser.lastSeen }}</div>
+                            <div>{{ mainUser.lastSeen }} {{contacts[index].lastAccess}}</div>
                         </span>
                     </span>
                         <span style="width: 14%; height: 80px; display: inline-block;">
