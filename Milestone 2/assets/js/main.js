@@ -93,9 +93,7 @@
             }
         ],
         mainUser : {
-            name: 'Michele',
             lastSeen: 'Ultimo accesso oggi alle',
-            avatar: './assets/img/avatar_1.jpg'
         },
 
 

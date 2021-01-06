@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Milestone 1 - Boolzap</title>
+    <title>Milestone 2 - Boolzap</title>
     <style>
         *{
             margin: 0;
@@ -88,6 +88,52 @@
             background-image: url("assets/img/mine.jpg");
             overflow-y: scroll;
         }
+        .chat_preview > div {
+          padding: 20px 18px 0 18px;
+        }
+
+        .senderContainer {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .sent {
+            width: 240px;
+            background-color: #D5F9BA;
+            padding: 20px 10px 5px 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .recipientContainer {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .received {
+            width: 240px;
+            padding: 20px 10px 5px 10px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .sent > #text, .received > #text {
+            font-size: 18px;
+            padding-bottom: 5px;
+        }
+
+        .sent > #date, .received > #date {
+            color: #BDB9BB;
+            font-size: 12px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #date i {
+          margin-left: 5px;
+        }
+
         .chat_input {
             width: 100%;
             height: 120px;
@@ -183,8 +229,23 @@
 
                 </div>
                 <div class="chat_preview">
+                  <div v-if="contacts[index].visible" v-for="(contact,index) in contacts">
+                        <div :class="(message.status === 'sent') ? 'senderContainer' : 'recipientContainer' " v-for="message in contact.messages">
+                            <div :class="(message.status === 'sent') ? 'sent' : 'received' ">
+                                  <div id="text">
+                                      <span>{{message.text}}</span>
+                                  </div>
+                                  <div id="date">
+                                      <span>{{message.date}}</span>
+                                      <span><i class="fas fa-check"></i></span>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
 
-                </div>
+
+
                 <div class="chat_input">
                     <div style="width: 10%; height: 100%; display: inline-block; text-align: center;">
                         <i class="far fa-smile" style="font-size: 35px; color: #6B7376; vertical-align: middle; "></i>
