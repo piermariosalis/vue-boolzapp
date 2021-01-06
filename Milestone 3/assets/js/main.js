@@ -10,6 +10,7 @@
             {
                 name: 'Michele',
                 visible: true,
+                lastAccess: "10/01/2020 16:15:22",
                 avatar: './assets/img/avatar_1.jpg',
                 messages: [
                 {
@@ -33,6 +34,7 @@
                 name: 'Fabio',
                 avatar: './assets/img/avatar_2.jpg',
                 visible: false,
+                lastAccess: "20/03/2020 16:30:55",
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -55,6 +57,7 @@
                 name: 'Samuele',
                 avatar: './assets/img/avatar_3.jpg',
                 visible: false,
+                lastAccess: "28/03/2020 16:15:22",
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -77,6 +80,7 @@
                 name: 'Luca',
                 avatar: './assets/img/avatar_4.jpg',
                 visible: false,
+                lastAccess: "10/01/2020 15:50:00",
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -107,7 +111,19 @@
     },
 
     inputSend(index){
+
+
+      function time_date() {
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+
+        return dateTime;
+      }
+
       let senderInput = {
+        date: time_date(),
         text: this.newInput,
         status: 'sent'
       };
@@ -118,10 +134,12 @@
 
       setTimeout(function () {
         let recipientOutput = {
+          date: time_date(),
            text: 'Ok!',
            status: 'received'
         };
         contactList[index].messages.push(recipientOutput);
+        contactList[index].lastAccess = time_date();
       },1000);
     }
 },
