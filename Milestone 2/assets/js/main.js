@@ -1,4 +1,4 @@
-let app = new Vue ({
+  let app = new Vue ({
     el: "#root",
 
     data: {
@@ -10,6 +10,7 @@ let app = new Vue ({
         contacts: [
             {
                 name: 'Michele',
+                visible: true,
                 avatar: './assets/img/avatar_1.jpg',
                 messages: [
                 {
@@ -48,5 +49,14 @@ let app = new Vue ({
             avatar: './assets/img/avatar_1.jpg'
         },
 
+
+    },
+    methods: {
+      selected(index){
+        for (let i = 0; i < this.contacts.length; i++) {
+            this.contacts[i].visible = false;
+        }
+        this.contacts[index].visible = true;
     }
+},
 })
