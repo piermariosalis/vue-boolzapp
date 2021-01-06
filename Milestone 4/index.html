@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Milestone 3 - Boolzap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+
+    .container {
+      width: 1400px;
+      height: 900px;
+      margin-top: 0;
+      background: blue;
+      display: flex;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 35%;
+      height: 100%;
+      background-color: red;
+
+    }
+
+    .header_side {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      background: #EAEAEA;
+      border-right: 0.5px solid #D6D6D6;
+    }
+
+    .notification {
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+      background-color: #8EDAFC;
+    }
+
+    .search_chat {
+      width: 100%;
+      height: 70px;
+      background-color: #FAFAFA;
+    }
+
+    .contact_list {
+      width: 100%;
+      height: 650px;
+      overflow-y: scroll;
+      background-color: white;
+      border-right: 0.5px solid #D6D6D6;
+    }
+
+    .contact_list li:hover {
+      background-color: #d8d8d8;
+    }
+
+    /* !SIDEBAR */
+
+    /* CHAT SECTION / MAIN */
+    .main {
+      width: 65%;
+      height: 100%;
+      background-color: green;
+    }
+
+    .header_main {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      background: #EAEAEA;
+    }
+
+    .chat_preview {
+      width: 100%;
+      height: 700px;
+      background-image: url("assets/img/mine.jpg");
+      overflow-y: scroll;
+    }
+
+    .chat_preview>div {
+      padding: 20px 18px 0 18px;
+    }
+
+    .senderContainer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .sent {
+      width: 240px;
+      background-color: #D5F9BA;
+      padding: 20px 10px 5px 10px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .recipientContainer {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .received {
+      width: 240px;
+      padding: 20px 10px 5px 10px;
+      background-color: white;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .sent>#text,
+    .received>#text {
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
+
+    .sent>#date,
+    .received>#date {
+      color: #BDB9BB;
+      font-size: 12px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #date i {
+      margin-left: 5px;
+    }
+
+    .chat_input {
+      width: 100%;
+      height: 120px;
+      background: #F3EEEA;
+    }
+
+    /* !CHAT SECTION / MAIN */
+  </style>
+</head>
+
+<body>
+  <!-- WALLPAPER ONE -->
+  <div class="layover_One" style="width: 100vw; height: 100px; position: fixed; z-index: -1; background: #009688; margin: 0;"></div>
+  <!-- !WALLPAPER ONE -->
+
+
+
+
+
+  <div id="root">
+
+    <!-- BOOLZAP WINDOW -->
+    <div class="container">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="header_side">
+          <span style="width: 70%; height: 80px; display: inline-block;">
+            <img :src="userAccount.avatar" style="width:60px; border-radius: 50%;vertical-align: middle; margin-left: 15px;">
+            <span style="display: inline-block">
+              <h3>{{ userAccount.name }}</h3>
+            </span>
+          </span>
+          <span style="width: 29%; height: 80px;">
+            <i class="fas fa-circle-notch" style=" font-size: 25px; vertical-align: middle; color: #B1B1B1"></i>
+            <i class="fas fa-comment-alt" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1; margin: 0 20px;"></i>
+            <i class="fas fa-ellipsis-v" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+          </span>
+
+        </div>
+
+        <div class="notification">
+          <div style="width: 20%; height: 100px; display: inline-block;">
+            <i class="fas fa-bell-slash" style="font-size: 30px; padding: 15px; color: #8EDAFC; background: white; border-radius: 50%;vertical-align: middle;margin-left: 15px;"></i>
+
+          </div>
+          <span style="width: 79%; line-height: 20px; vertical-align: middle; display: inline-block;">
+
+            <h3 style="vertical-align: middle;">Ricevi le notifiche di nuovi messaggi</h3>
+            <a href="" style="vertical-align: middle;">Attiva le notifiche desktop</a>
+          </span>
+
+
+          </span>
+
+        </div>
+
+        <div class="search_chat">
+          <div style="width: 100%; line-height: 70px; padding: 0 10px; ">
+            <i class="fas fa-search" style="background-color: white; position: absolute; margin: 25px;"></i>
+            <input @keyup="findContact" v-model="showContact" type="text" placeholder="Cerca o inizia una nuova chat" style="border: 1px solid white; width: 100%; text-align: center;padding: 10px; border-radius: 10px; ">
+          </div>
+        </div>
+
+        <div class="contact_list">
+          <ul style="margin-top: 30px;">
+            <li v-if="contacts[index].discoverable" v-for="(contact,index) in contacts" @click="selected(index)" style="border-bottom: 0.5px solid #F9F9F9; margin-bottom: 20px;">
+              <img :src="contact.avatar" alt="" style="width:90px; border-radius: 50%;vertical-align: middle; margin-left: 15px; margin-bottom: 15px;">
+              <span style="vertical-align: top; margin-left: 20px; font-size: 22px;font-weight: bold;">{{ contact.name }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- !SIDEBAR -->
+
+
+
+
+
+      <!-- CHAT SECTION / MAIN -->
+      <div class="main">
+        <div class="header_main" v-if="contacts[index].visible" v-for="(contact,index) in contacts">
+          <span style="width:85%; height: 80px; display: inline-block;">
+            <img :src="contacts[index].avatar" style="width:60px; border-radius: 50%;vertical-align: middle;margin-left: 15px;">
+            <span style="display: inline-block; vertical-align: middle; line-height: 20px;">
+              <h3>{{ contacts[index].name }}</h3>
+              <div>{{ mainUser.lastSeen }} {{contacts[index].lastAccess}}</div>
+            </span>
+          </span>
+          <span style="width: 14%; height: 80px; display: inline-block;">
+            <i class="fas fa-search" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+            <i class="fas fa-paperclip" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1; margin: 0 20px;"></i>
+            <i class="fas fa-ellipsis-v" style=" font-size: 25px;vertical-align: middle; color: #B1B1B1;"></i>
+          </span>
+
+
+        </div>
+        <div class="chat_preview">
+          <div v-if="contacts[index].visible" v-for="(contact,index) in contacts">
+            <div :class="(message.status === 'sent') ? 'senderContainer' : 'recipientContainer' " v-for="message in contact.messages">
+              <div :class="(message.status === 'sent') ? 'sent' : 'received' ">
+                <div id="text">
+                  <span>{{message.text}}</span>
+                </div>
+                <div id="date">
+                  <span>{{message.date}}</span>
+                  <span><i class="fas fa-check"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="chat_input">
+          <div style="width: 10%; height: 100%; display: inline-block; text-align: center;">
+            <i class="far fa-smile" style="font-size: 35px; color: #6B7376; vertical-align: middle; "></i>
+          </div>
+
+          <!-- Input text chat  -->
+          <div style="width: 79%; height: 120px; line-height: 100px; display: inline-block; ">
+            <input v-model="newInput" @keyup.13="inputSend(index)" v-if="contacts[index].visible" v-for="(contact,index) in contacts"
+              style="width: 100%; height: 100px; margin-top: 10px; border: 1px solid white; width: 100%;  padding: 10px; font-size:20px; vertical-align: middle; border-radius: 10px;" type="text" placeholder="Scrivi un messaggio">
+          </div>
+          <!-- !Input text chat  -->
+
+          <div style="width: 10%; height: 100%; display: inline-block; text-align: center;">
+            <i class="fas fa-microphone" style="font-size: 35px; color: #6B7376; vertical-align: middle;"></i>
+          </div>
+        </div>
+      </div>
+      <!-- !CHAT SECTION / MAIN -->
+
+    </div>
+    <!-- "BOOLZAP WINDOWS -->
+  </div>
+
+
+
+
+
+  <!-- WALLPAPER TWO -->
+  <div class="layoverTwo" style="width: 100vw; height: 100%; background: #DBDBD3; position: fixed; z-index: -2;"></div>
+  <!-- !WALLPAPER TWO -->
+
+
+
+
+
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
